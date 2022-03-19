@@ -1,0 +1,14 @@
+.todo-search-input {
+    height: 2rem;
+    border: none;
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    max-width: 30rem;
+}
+
+.todo-search-input:focus-visible {
+    outline: 5px solid #136F63;
+}

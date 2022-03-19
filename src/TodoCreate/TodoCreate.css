@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-todo-input {
+    height: 2rem;
+    border: none;
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    max-width: 30rem;
+}
+
+.add-todo-input:focus-visible {
+    outline: 5px solid #136F63;
+}
+
+.add-todo-button {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #136F63;
+    border: none;
+}
+
+.add-todo-button:hover {
+    outline: 5px solid #136F63;
+    background-color: #ffffff;
+    color: #136F63;
+}

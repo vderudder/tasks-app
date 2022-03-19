@@ -1,0 +1,56 @@
+.todo-item {
+    display         : flex;
+    width       : 400px;
+    align-items     : center;
+    justify-content : space-between;
+    background-color: #ffffff;
+    color           : #021927;
+    margin          : 1rem 0;
+    padding         : 1rem 1.5rem;
+    border-radius   : .3rem;
+    box-shadow      : 0px 14px 55px rgba(0, 0, 0, 0.1)
+}
+
+.todo-item--completed {
+    text-decoration: line-through;
+}
+
+.todo-item-check {
+    cursor         : pointer;
+    width          : .8rem;
+    height         : .8rem;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : .8rem;
+    border         : 2px solid #cacaca;
+    border-radius  : .3rem;
+    margin-right   : 2rem;
+}
+
+.todo-item-check:hover {
+    color           : #ffffff;
+    font-weight     : 800;
+    background-color: #cacaca;
+}
+
+.todo-item-check--active {
+    color           : #ffffff;
+    font-weight     : 800;
+    background-color: #cacaca;
+}
+
+.todo-item-delete {
+    cursor         : pointer;
+    width          : .8rem;
+    height         : .8rem;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    padding        : .8rem;
+    margin-left    : 2rem;
+}
+
+.todo-item-delete:hover {
+    color: red;
+}
