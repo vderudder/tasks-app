@@ -6,21 +6,29 @@ export function TodoCreate({newTodo, setNewTodo, onCreate}) {
         const value = e.target.value;
         setNewTodo(value);
     }
+
+    const onEnterKey = (e) => {
+        if (e.charCode === 13) {
+            onCreate();
+            setNewTodo("");
+        }
+    }
     
     return (
-        <div className="container">
+        <div className="create-container">
             <input 
-            className="add-todo-input"
-            placeholder="Add new task..."
+            className="create-input"
+            placeholder="Add a new task..."
             value={newTodo}
+            onFocus={() => setNewTodo("")}
             onChange={onNewTodoChange}
-            onFocus={(e) => e.target.value = ""}
+            onKeyPress={onEnterKey}
             />
 
             <button 
-            className="add-todo-button"
+            className="create-button"
             onClick={onCreate}
-            >+</button>
+            ><i className="fas fa-plus"></i></button>
         </div>
 
     );

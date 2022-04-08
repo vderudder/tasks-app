@@ -1,4 +1,4 @@
-.todo-search-input {
+.search-input {
     height: 2rem;
     border: none;
     border-radius: 3rem;
@@ -9,6 +9,6 @@
     max-width: 30rem;
 }
 
-.todo-search-input:focus-visible {
+.search-input:focus-visible {
     outline: 5px solid #136F63;
 }

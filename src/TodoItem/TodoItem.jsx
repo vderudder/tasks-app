@@ -7,15 +7,15 @@ export function TodoItem(props) {
     return (
         <li className="todo-item">
             <span 
-            className={`todo-item-check ${props.completed && 'todo-item-check--active'}`}
+            className={`todo-item-check ${props.completed && 'todo-item-check--checked'}`}
             onClick={props.onComplete}
-            >C</span>
+            ><i className="fas fa-check"></i></span>
             <p 
-            className={`${props.completed && 'todo-item--completed'}`}
+            className={`todo-item-text ${props.completed && 'todo-item--completed'}`}
             >{props.text}</p>
             <span 
             className="todo-item-delete"
-            onClick={props.onDelete}>X</span>
+            onClick={props.onDelete}><i className="far fa-trash-alt"></i></span>
         </li>
     );
 }

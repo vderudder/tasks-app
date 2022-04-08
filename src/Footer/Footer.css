@@ -1,0 +1,29 @@
+.footer-container {
+    border-top: 1px solid #cacaca;
+    min-width: 80%;
+    margin: 2rem auto;
+}
+
+.footer-container p {
+    color: #777;
+    font-size: .9rem;
+    margin-top: 1rem;
+}
+
+.personal-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.personal-brand a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #777;
+    font-size: .9rem;
+}
+
+.personal-brand a:hover {
+    color: #136F63;
+}

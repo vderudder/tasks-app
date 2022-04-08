@@ -1,58 +1,74 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../TodoContext/TodoContext";
 import { TodoCounter } from "../TodoCounter/TodoCounter"
-import { TodoSearch } from "../TodoSearch/TodoSearch";
 import { TodoList } from "../TodoList/TodoList";
 import { TodoItem } from "../TodoItem/TodoItem";
 import { TodoCreate } from "../TodoCreate/TodoCreate";
+import { TodoFilter } from "../TodoFilter/TodoFilter";
+import { TodoEmptyState } from "../TodoEmptyState/TodoEmptyState";
+import { TodoLoadingState } from "../TodoEmptyState/TodoLoadingState";
 
-export function AppUi(
-    {totalTodos,
-    completedTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    newTodo,
-    setNewTodo,
-    completeTodo,
-    deleteTodo,
-    createTodo}
-) {
+import image from "../assets/image.svg"
+
+import "./App.css"
+import { Footer } from "../Footer/Footer";
+
+export function AppUi() {
+
+    const {
+        error,
+        loading,
+        completeTodo,
+        deleteTodo,
+        newTodo,
+        setNewTodo,
+        createTodo,
+        filteredTodos } = useContext(TodoContext);
+
+
+
+
     return (
-        <div className="wrapper">
+        <React.Fragment>
+            <div className="app-container">
 
-            <div className="left">
-                <h1 className="title-h1">Welcome!</h1>
-                <TodoCreate
-                    newTodo={newTodo}
-                    setNewTodo={setNewTodo}
-                    onCreate={() => createTodo(newTodo)}
-                />
+                <div className="left">
+                    <img src={image} alt="Tasks home image" className="tasks-img" />
+                    <h1 className="title-h1">Welcome!</h1>
+                    <TodoCreate
+                        newTodo={newTodo}
+                        setNewTodo={setNewTodo}
+                        onCreate={() => createTodo(newTodo)}
+                    />
+
+                </div>
+
+
+                <div className="right">
+
+                    <h1 className="title-h2">Your tasks</h1>
+                    <TodoCounter />
+                    <TodoFilter />
+
+                    <TodoList>
+                        {error && <p>Oops! Something went wrong</p>}
+                        {loading && <TodoLoadingState />}
+                        {(!loading && !filteredTodos.length) && <TodoEmptyState />}
+
+                        {filteredTodos.map(todo => (
+                            <TodoItem
+                                key={todo.id}
+                                text={todo.text}
+                                completed={todo.completed}
+                                onComplete={() => completeTodo(todo.text)}
+                                onDelete={() => deleteTodo(todo.text)}
+                            />
+                        ))}
+                    </TodoList>
+                </div>
             </div>
+            <Footer />
 
-            <div className="right">
-                <h1>Your tasks</h1>
-                <TodoCounter
-                    total={totalTodos}
-                    completed={completedTodos}
-                />
-
-                <TodoSearch
-                    searchValue={searchValue}
-                    setSerchValue={setSearchValue}
-                />
-                <TodoList>
-                    {searchedTodos.map(todo => (
-                        <TodoItem
-                            key={todo.id}
-                            text={todo.text}
-                            completed={todo.completed}
-                            onComplete={() => completeTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
-                        />
-                    ))}
-                </TodoList>
-            </div>
-
-        </div>
+        </React.Fragment>
     );
 }

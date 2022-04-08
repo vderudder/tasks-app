@@ -1,38 +1,48 @@
-.container {
-    display: flex;
-    flex-direction: column;
+.create-container {
+    display        : flex;
+    flex-direction : row;
     justify-content: center;
-    align-items: center;
+    align-items    : center;
 }
 
-.add-todo-input {
-    height: 2rem;
-    border: none;
-    border-radius: 3rem;
-    padding: 0.5rem 1.5rem;
-    margin: 1.5rem 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    max-width: 30rem;
+.create-input {
+    height          : 2rem;
+    border          : 1px solid #136f6384;
+    border-radius   : .3rem;
+    padding         : 0.5rem 1.5rem;
+    margin          : 1.5rem 0;
+    font-family     : 'Poppins', sans-serif;
+    font-size       : 1rem;
+    background-color: #FAF9F6;
 }
 
-.add-todo-input:focus-visible {
-    outline: 5px solid #136F63;
+.create-input:focus-visible {
+    outline: none;
+    border : 2px solid #136f63;
+    
 }
 
-.add-todo-button {
-    cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 2rem;
-    font-size: 2rem;
-    color: #ffffff;
+.create-input:focus {
+    outline: none;    
+}
+
+.create-button {
+    cursor          : pointer;
+    width           : 2.5rem;
+    height          : 2.5rem;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    padding         : .8rem;
+    border          : 2px solid #136f63;
+    border-radius   : 2rem;
+    margin-left     : 1rem;
+    color           : #ffffff;
     background-color: #136F63;
-    border: none;
+    font-size       : 1rem;
 }
 
-.add-todo-button:hover {
-    outline: 5px solid #136F63;
-    background-color: #ffffff;
-    color: #136F63;
+.create-button:hover {
+    background-color: #0e4e45;
+    border          : 2px solid #0e4e45;
 }

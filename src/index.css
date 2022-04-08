@@ -8,6 +8,8 @@
   justify-content: center;
   text-align     : center;
 
-  background: rgba(5, 0, 0, 0.41);
+}
 
+body {
+  margin: 0;
 }

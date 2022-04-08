@@ -1,0 +1,8 @@
+.empty-state-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.empty-state-container p {
+    color: #777;
+}
